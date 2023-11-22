@@ -78,8 +78,9 @@ class Main(QWidget):
     def translate_click(self):
         try:
             value_to_key1 = self.output_option.currentText()
-            key_to_value1 = [k for k,v in LANGUAGES.items() if v == value_to_key1]
             value_to_key2 = self.input_option.currentText()
+            key_to_value1 = [k for k,v in LANGUAGES.items() if v == value_to_key1]
+
             key_to_value2 = [k for k,v in LANGUAGES.items() if v == value_to_key2]
             self.script = self.translate_text(self.input_box.toPlainText(), key_to_value1[0],key_to_value2[0])
             self.output_box.setText(self.script)
